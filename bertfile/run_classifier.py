@@ -27,10 +27,10 @@ import tokenization
 import tensorflow as tf
 
 # 以下为了解决爆显存的问题
-import os
+# import os
 
-os.environ["CUDA_DEVICE_ORDER"] ="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  #不让用GPU
+# os.environ["CUDA_DEVICE_ORDER"] ="PCI_BUS_ID"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  #不让用GPU
 # os.environ["CUDA_VISIBLE_DEVICES"] = '0' #指定第一块GPU可用
 # config = tf.ConfigProto()
 # config.gpu_options.per_process_gpu_memory_fraction = 0.5 # 程序最多只能占用指定gpu50%的显存

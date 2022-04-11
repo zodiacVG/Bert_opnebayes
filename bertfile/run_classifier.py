@@ -445,14 +445,13 @@ class MultiSentiProcessor(DataProcessor):
       if i == 0:
         continue
       guid = "%s-%s" % (set_type, tokenization.convert_to_unicode(line[0]))
-      text_a = tokenization.convert_to_unicode(line[8])
-      text_b = tokenization.convert_to_unicode(line[9])
+      text_a = tokenization.convert_to_unicode(line[1])
       if set_type == "test":
         label = "0"
       else:
         label = tokenization.convert_to_unicode(line[-1])
       examples.append(
-          InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+          InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
     return examples
 
 def convert_single_example(ex_index, example, label_list, max_seq_length,
